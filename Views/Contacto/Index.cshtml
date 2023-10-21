@@ -1,0 +1,53 @@
+@model Contacto
+
+@{
+    ViewData["Title"] = "Contactame";
+}
+
+<body>
+    <section class="cta">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-5">
+        <h2>¿Tienes problemas con las compras tus útiles?</h2>
+            <p>Completa nuestro formulario, para poder contactarnos contigo y ayudarte con tus problemas.</p>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <p class="titulo">Siempre estaremos al tanto de nuestro clientes</p>
+    
+    <!-- Formulario de contacto -->
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="form-container">
+                <h1>Formulario de Contacto</h1>
+                <form asp-controller="Contacto" asp-action="Create" method="post">
+                    <div class="form-group">
+                        <label asp-for="Nombre" class="control-label1"></label>
+                        <input asp-for="Nombre" type="text1" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Email" class="control-label1"></label>
+                        <input asp-for="Email" type="text1" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Telefono" class="control-label1"></label>
+                        <input asp-for="Telefono" type="text1" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Pregunta" class="control-label1"></label>
+                        <input asp-for="Pregunta" type="text1" class="form-control" />
+                    </div>
+                    <div class="form-group text-center">
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </div>
+                </form>
+                
+                <h1>@ViewData["Message"]</h1>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+</body>
