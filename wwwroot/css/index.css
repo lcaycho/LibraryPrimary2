@@ -1,0 +1,20 @@
+.logo{
+    flex-basis: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 200px;
+    margin-left: 500px;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    flex-basis: 60%;
+}
+
+.imagen2{
+    width: 1400px;
+    height: 300px;
+}

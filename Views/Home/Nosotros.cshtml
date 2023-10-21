@@ -1,46 +1,8 @@
-﻿﻿
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "¿Quienes Somos?";
 }
 <link rel="stylesheet" href="~/css/index.css">
-<style>
-    #myBtn {
-      display: none;
-      position: fixed;
-      bottom: 20px;
-      right: 30px;
-      z-index: 99;
-      font-size: 18px;
-      border: none;
-      outline: none;
-      background-color: #0c5ca1;
-      color: rgb(9, 48, 107)55, 255, 255);
-      cursor: pointer;
-      padding: 15px;
-      border-radius: 4px;
-    }
-
-    #myBtn:hover {
-      background-color: #777;
-    }
-
-    
-
-    
-|
-    
-  </style>
-  
-<section>
-    <div class="container">
-        <h2>BIENVENIDOS A PRIMARY LIBRARY</h2>
-        <img src="https://img.freepik.com/vector-premium/ilustracion-vector-bolso-escuela-utiles-escolares_43633-3642.jpg"
-        class="logo" >
-    </div>
-</section>
-<br>
-<br>
-
+<h2>@ViewData["Title"]</h2>
 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -67,12 +29,26 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
-<br>
-<section>
-    <div class="row align-items-center">
-      <div class="col-md-6">
-        <h2 >¿Quieres ver más?</h2>
-        <p >Explora nuestro catálogo de nuestro útiles a buenos preciazos</p>
-        <a href="Catalogo" class="btn btn-primary">Ver catálogo</a>
-      </div>
+<div style="display: flex; flex-wrap: wrap; width: 100%;">
+  <div style="width: 33.33%;">
+    <div style="background-color: rgb(192, 242, 242); padding: 10px;">
+      <p>¿Quiénes somos?</p>
+        <p>Somos una empresa basada en la compra de útiles escolares, que son traídos en muy buena calidad y de buenos marcas, como Artesco, FaberCastell, etc.
+      </p>
     </div>
+  </div>
+  <div style="width: 33.33%;">
+    <div style="background-color: rgb(192, 242, 242); padding: 10px;">
+      <p>Misión</p>
+        <p>En Library Primary, nuestra misión es ser el apoyo confiable de estudiantes, padres y educadores al proporcionar utiles escolares de calidad excepcional. 
+      </p>
+    </div>
+  </div>
+  <div style="width: 33.33%;">
+    <div style="background-color: rgb(192, 242, 242); padding: 10px;">
+      <p>Visión</p>
+        <p>Nuestra visión en Library Primary es forjar un camino hacia el éxito educativo al convertirnos en una tienda de referencia, reconocida por ofrecer una cuidadosa selección de utiles escolares que potencien la creatividad y el conocimiento en los estudiantes.
+      </p>
+    </div>
+  </div>
+</div>
