@@ -1,0 +1,27 @@
+@model LibraryPrimary2.Models.Producto
+
+@{
+    ViewData["Title"] = "Detalles del Producto";
+}
+<link rel="stylesheet" href="~/css/catalogo.css">
+    <h1>Detalles de: @Html.DisplayFor(model => model.Name)</h1>
+
+
+    <div class="container">
+            <div class="col-sm-4">
+              <div class="card mb-3">
+                <div class="card-body">
+                  <div class="card-img-actions">
+                    <img class="img-responsive" width="350" height="400"
+                       src="@Html.DisplayFor(model => model.ImageName)" alt="@Html.DisplayFor(model => model.ImageName)"  />
+                  </div>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">@Html.DisplayFor(model => model.Name)</h5>
+                  <p class="card-text">@Html.DisplayFor(model => model.Descripcion)</p>
+                  <h5 class="card-title">@Html.DisplayFor(model => model.Precio)</h5>
+                  <a class="btn btn-primary" asp-action="Add" asp-route-id="@Model.Id" onclick="return confirm('¿Estás seguro que deseas añadir este producto a tu carrito de compras?');" type="button" id="alerta">Añadir</a>
+                </div>
+              </div>
+            </div>
+    </div>
