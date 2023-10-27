@@ -1,0 +1,18 @@
+GET http://localhost:5267/api/producto/
+Accept: application/json
+
+GET http://localhost:5267/api/producto/1
+Accept: application/json
+
+POST http://localhost:5267/api/producto HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+
+{
+    "name": "Lapiz Grafito",
+    "descripcion": "Marca Faber Castell, contiene 6 unidades",
+    "precio": 20,
+    "porcentajeDescuento": 0,
+    "imageName": "https://production-tailoy-repo-magento-statics.s3.amazonaws.com/imagenes/872x872/productos/i/l/a/lapiz-grafito-castell-9000-x12-design-fab-9614-default-1.jpg",
+    "status": "Active"
+}
