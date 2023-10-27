@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using LibraryPrimary2.Data;
 using LibraryPrimary2.Service;
+using Npgsql.EntityFrameworkCore.PostgreSQL;
+using System.Diagnostics;
 
 
 var builder = WebApplication.CreateBuilder(args);
