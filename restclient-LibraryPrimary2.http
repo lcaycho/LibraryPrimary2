@@ -2,6 +2,10 @@ GET http://localhost:5267/api/producto/
 Accept: application/json
 
 GET http://localhost:5267/api/producto/1
+Accept: application/js
+
+
+GET http://localhost:5267/api/producto/2
 Accept: application/json
 
 POST http://localhost:5267/api/producto HTTP/1.1
@@ -16,3 +20,8 @@ Accept: application/json
     "imageName": "https://production-tailoy-repo-magento-statics.s3.amazonaws.com/imagenes/872x872/productos/i/l/a/lapiz-grafito-castell-9000-x12-design-fab-9614-default-1.jpg",
     "status": "Active"
 }
+
+
+##ELIMINAR POST
+DELETE http://localhost:5267/api/producto/17
+

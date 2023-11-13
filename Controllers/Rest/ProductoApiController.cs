@@ -13,7 +13,7 @@ using LibraryPrimary2.Service;
 namespace LibraryPrimary2.Controllers.Rest
 {
     [ApiController]
-    [Route("api/[controller]")]
+    //[Route("api/[controller]")]
     [Route("api/producto")]
     public class ProductoApiController : ControllerBase
     {

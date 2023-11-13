@@ -4,6 +4,7 @@ using LibraryPrimary2.Data;
 using LibraryPrimary2.Service;
 using Npgsql.EntityFrameworkCore.PostgreSQL;
 using System.Diagnostics;
+using LibraryPrimary2.Integrations;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -21,6 +22,8 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<ProductoService, ProductoService>();
+
+builder.Services.AddScoped<JsonplaceholderAPIIntegration, JsonplaceholderAPIIntegration>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
