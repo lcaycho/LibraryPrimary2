@@ -9,6 +9,8 @@ using LibraryPrimary2.Data;
 using LibraryPrimary2.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using OfficeOpenXml.Table;
+using OfficeOpenXml;
 namespace LibraryPrimary2.Controllers
 {
     public class PedidoController : Controller
@@ -23,6 +25,28 @@ namespace LibraryPrimary2.Controllers
             _logger = logger;
             _context= context;
             _userManager=userManager;
+        }
+
+        public IActionResult ExportarExcel() 
+        {
+            string excelContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+            var pedidos = _context.DataPedido.AsNoTracking().ToList();
+            using (var libro = new ExcelPackage())
+            {
+                var worksheet = libro.Workbook.Worksheets.Add("Pedidos");
+                worksheet.Cells["A1"].LoadFromCollection(pedidos, PrintHeaders: true);
+                for (var col = 1; col < pedidos.Count + 1; col++)
+                {
+                    worksheet.Column(col).AutoFit();
+                }
+                // Agregar formato de tabla
+                var tabla = worksheet.Tables.Add(new ExcelAddressBase(fromRow: 1, fromCol: 1, toRow: pedidos.Count + 1, toColumn: 2), "Pedidos");
+                tabla.ShowHeader = true;
+                tabla.TableStyle = TableStyles.Light6;
+                tabla.ShowTotal = true;
+
+                return File(libro.GetAsByteArray(), excelContentType, "Pedidos.xlsx");
+            }
         }
 
         public IActionResult Index()
